@@ -1,2 +1,3 @@
 rootProject.name='NewsApi'
 include ':app'
+include ':frogonewsapi'
