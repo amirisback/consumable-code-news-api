@@ -41,6 +41,8 @@ object NewsRemoteDataSource : NewsDataSource {
         newsApiService.getApiService
             .getTopHeadline(apiKey, q, sources, category, country)
             .subscribeOn(Schedulers.io())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : NewsApiCallback<ArticleResponse>() {
                 override fun onSuccess(model: ArticleResponse) {
@@ -52,6 +54,7 @@ object NewsRemoteDataSource : NewsDataSource {
                 }
 
                 override fun onFinish() {}
+
             })
     }
 }

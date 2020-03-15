@@ -21,21 +21,14 @@ class MainActivity : AppCompatActivity() {
             null,
             "id",
             object : NewsResultCallback<ArticleResponse> {
-                override fun getResultData(data: ArticleResponse) {
+                override fun getResultData(data: ArticleResponse) {}
 
-                }
+                override fun failedResult(statusCode: Int, errorMessage: String?) {}
 
-                override fun failedResult(statusCode: Int, errorMessage: String?) {
-                    TODO("Not yet implemented")
-                }
+                override fun onShowProgress() {}
 
-                override fun onShowProgress() {
-                    TODO("Not yet implemented")
-                }
+                override fun onHideProgress() {}
 
-                override fun onHideProgress() {
-                    TODO("Not yet implemented")
-                }
             })
 
 
