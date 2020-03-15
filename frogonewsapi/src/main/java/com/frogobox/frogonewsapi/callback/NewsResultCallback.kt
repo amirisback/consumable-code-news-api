@@ -25,4 +25,10 @@ interface NewsResultCallback<T> {
     // Failed Meesage
     fun failedResult(statusCode: Int, errorMessage: String?)
 
+    // Do on subscribe
+    fun onShowProgress()
+
+    // Do on Terminate
+    fun onHideProgress()
+
 }

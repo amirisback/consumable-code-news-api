@@ -27,19 +27,19 @@ data class Source(
     @SerializedName("name")
     var name: String? = null,
 
-    @SerializedName("id")
+    @SerializedName("description")
     var description: String? = null,
 
-    @SerializedName("id")
+    @SerializedName("url")
     var url: String? = null,
 
-    @SerializedName("id")
+    @SerializedName("category")
     var category: String? = null,
 
-    @SerializedName("id")
+    @SerializedName("language")
     var language: String? = null,
 
-    @SerializedName("id")
+    @SerializedName("country")
     var country: String? = null
 
 )

@@ -26,6 +26,12 @@ interface BaseNewsDataSource {
 
         // If failed fetching data from API
         fun onFailed(statusCode: Int, errorMessage: String? = "")
+
+        // Do on subscribe
+        fun onShowProgress()
+
+        // Do on Terminate
+        fun onHideProgress()
     }
 
 }

@@ -26,57 +26,8 @@ interface ConsumeNewsApiView {
     // Switch For Using Chuck Interceptor
     fun usingChuckInterceptor(context: Context)
 
-    // Get Top Headline From Country
-    fun getTopHeadlineByCountry(
-        apiKey: String,
-        country: String,
-        callback: NewsResultCallback<ArticleResponse>
-    )
-
-    // Get Top Headline From Country and Category
-    fun getTopHeadlineByCountry(
-        apiKey: String,
-        country: String,
-        category: String,
-        callback: NewsResultCallback<ArticleResponse>
-    )
-
-    // Get Top Headline From Source
-    fun getTopHeadlineBySource(
-        apiKey: String,
-        sources: String,
-        callback: NewsResultCallback<ArticleResponse>
-    )
-
-    // Get Top Headline From Source and Category
-    fun getTopHeadlineBySource(
-        apiKey: String,
-        sources: String,
-        category: String,
-        callback: NewsResultCallback<ArticleResponse>
-    )
-
-    // Get Top Headline From q
-    fun getTopHeadlineByQ(apiKey: String, q: String, callback: NewsResultCallback<ArticleResponse>)
-
-    // Get Top Headline From q
-    fun getTopHeadlineByQ(
-        apiKey: String,
-        q: String,
-        category: String,
-        callback: NewsResultCallback<ArticleResponse>
-    )
-
-    // Get Top Headline From Category
-    fun getTopHeadlineByCategory(
-        apiKey: String,
-        category: String,
-        callback: NewsResultCallback<ArticleResponse>
-    )
-
     // Get Top Headline
     fun getTopHeadline(
-        apiKey: String,
         q: String?,
         sources: String?,
         category: String?,
