@@ -70,7 +70,6 @@ interface NewsDataSource {
     // Get Top Headline From Category
     fun getTopHeadlineByCategory(
         apiKey: String,
-        q: String,
         category: String,
         callback: GetRemoteCallback<ArticleResponse>
     )

@@ -83,7 +83,6 @@ interface NewsApiService {
     @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
     fun getTopHeadlineByCategory(
         @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_Q) q: String,
         @Query(NewsConstant.QUERY_CATEGORY) category: String
     ): Observable<ArticleResponse>
 

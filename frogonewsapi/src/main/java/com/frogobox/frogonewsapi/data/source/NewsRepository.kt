@@ -79,11 +79,10 @@ class NewsRepository(private val remoteDataSource: NewsRemoteDataSource) : NewsD
 
     override fun getTopHeadlineByCategory(
         apiKey: String,
-        q: String,
         category: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        remoteDataSource.getTopHeadlineByCategory(apiKey, q, category, callback)
+        remoteDataSource.getTopHeadlineByCategory(apiKey, category, callback)
     }
 
     override fun getTopHeadline(

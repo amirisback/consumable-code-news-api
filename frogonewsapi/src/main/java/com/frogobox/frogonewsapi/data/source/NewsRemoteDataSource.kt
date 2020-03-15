@@ -2,6 +2,8 @@ package com.frogobox.frogonewsapi.data.source
 
 import android.content.Context
 import com.frogobox.frogonewsapi.data.response.ArticleResponse
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
 /**
  * Created by Faisal Amir
@@ -33,7 +35,21 @@ object NewsRemoteDataSource : NewsDataSource {
         country: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineByCountry(apiKey, country)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadlineByCountry(
@@ -42,7 +58,21 @@ object NewsRemoteDataSource : NewsDataSource {
         category: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineByCountry(apiKey, country, category)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadlineBySource(
@@ -50,7 +80,21 @@ object NewsRemoteDataSource : NewsDataSource {
         sources: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineBySource(apiKey, sources)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadlineBySource(
@@ -59,7 +103,21 @@ object NewsRemoteDataSource : NewsDataSource {
         category: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineBySource(apiKey, sources, category)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadlineByQ(
@@ -67,7 +125,21 @@ object NewsRemoteDataSource : NewsDataSource {
         q: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineByQ(apiKey, q)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadlineByQ(
@@ -76,16 +148,43 @@ object NewsRemoteDataSource : NewsDataSource {
         category: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineByQ(apiKey, q, category)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadlineByCategory(
         apiKey: String,
-        q: String,
         category: String,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadlineByCategory(apiKey, category)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 
     override fun getTopHeadline(
@@ -96,6 +195,20 @@ object NewsRemoteDataSource : NewsDataSource {
         country: String?,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
-        TODO("Not yet implemented")
+        newsApiService.getApiService
+            .getTopHeadline(apiKey, q, sources, category, country)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {}
+            })
     }
 }
