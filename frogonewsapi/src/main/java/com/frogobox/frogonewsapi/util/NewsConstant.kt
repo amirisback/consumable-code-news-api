@@ -21,6 +21,13 @@ class NewsConstant {
 
     companion object {
 
+        const val QUERY_API_KEY = "apiKey"
+        const val QUERY_SOURCES = "sources"
+        const val QUERY_CATEGORY = "category"
+        const val QUERY_Q = "q"
+        const val QUERY_LANGUAGE = "language"
+        const val QUERY_COUNTRY = "country"
+
     }
 
 }

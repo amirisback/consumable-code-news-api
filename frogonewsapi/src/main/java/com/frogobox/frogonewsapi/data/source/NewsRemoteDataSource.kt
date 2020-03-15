@@ -1,6 +1,7 @@
 package com.frogobox.frogonewsapi.data.source
 
 import android.content.Context
+import com.frogobox.frogonewsapi.data.response.ArticleResponse
 
 /**
  * Created by Faisal Amir
@@ -27,4 +28,74 @@ object NewsRemoteDataSource : NewsDataSource {
         newsApiService.usingChuckInterceptor(context)
     }
 
+    override fun getTopHeadlineByCountry(
+        apiKey: String,
+        country: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadlineByCountry(
+        apiKey: String,
+        country: String,
+        category: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadlineBySource(
+        apiKey: String,
+        sources: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadlineBySource(
+        apiKey: String,
+        sources: String,
+        category: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadlineByQ(
+        apiKey: String,
+        q: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadlineByQ(
+        apiKey: String,
+        q: String,
+        category: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadlineByCategory(
+        apiKey: String,
+        q: String,
+        category: String,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
+
+    override fun getTopHeadline(
+        apiKey: String,
+        q: String?,
+        sources: String?,
+        category: String?,
+        country: String?,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        TODO("Not yet implemented")
+    }
 }
