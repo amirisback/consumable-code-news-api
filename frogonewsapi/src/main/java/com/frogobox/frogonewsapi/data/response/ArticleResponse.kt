@@ -28,6 +28,12 @@ data class ArticleResponse(
     @SerializedName("totalResults")
     var totalResults: Int? = null,
 
+    @SerializedName("code")
+    var code: String? = null,
+
+    @SerializedName("message")
+    var message: String? = null,
+
     @SerializedName("articles")
     var articles: List<Article>? = null
 
