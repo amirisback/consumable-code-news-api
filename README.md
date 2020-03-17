@@ -1,6 +1,6 @@
 # consumable-code-news-api By AmirIsBack
 - v1.0.0 - Development
-- Release Soon
+- Stable version
 
 # About This Project
 Eliminates the method of retrieving json data using retrofit repeatedly. so this project has a set of functions to retrieve data without the need for fetching data using the retrofit of the API
