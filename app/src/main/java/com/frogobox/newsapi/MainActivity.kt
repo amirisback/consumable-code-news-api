@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val consumeNewsApi = ConsumeNewsApi(NewsUrl.NEWS_API_KEY)
+        val consumeNewsApi = ConsumeNewsApi(NewsUrl.NEWS_API_KEY) // Your API_KEY
         consumeNewsApi.usingChuckInterceptor(this)
         consumeNewsApi.getTopHeadline(
             null,
@@ -23,13 +23,21 @@ class MainActivity : AppCompatActivity() {
             null,
             null,
             object : NewsResultCallback<ArticleResponse> {
-                override fun getResultData(data: ArticleResponse) {}
+                override fun getResultData(data: ArticleResponse) {
+                    // Your Ui or data
+                }
 
-                override fun failedResult(statusCode: Int, errorMessage: String?) {}
+                override fun failedResult(statusCode: Int, errorMessage: String?) {
+                    // Your failed to do
+                }
 
-                override fun onShowProgress() {}
+                override fun onShowProgress() {
+                    // Your Progress Show
+                }
 
-                override fun onHideProgress() {}
+                override fun onHideProgress() {
+                    // Your Progress Hide
+                }
 
             })
 
