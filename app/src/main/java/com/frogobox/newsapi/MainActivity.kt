@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity() {
             null,
             null,
             "id",
+            null,
+            null,
             object : NewsResultCallback<ArticleResponse> {
                 override fun getResultData(data: ArticleResponse) {}
 

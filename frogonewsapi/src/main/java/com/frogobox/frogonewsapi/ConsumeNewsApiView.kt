@@ -3,6 +3,7 @@ package com.frogobox.frogonewsapi
 import android.content.Context
 import com.frogobox.frogonewsapi.callback.NewsResultCallback
 import com.frogobox.frogonewsapi.data.response.ArticleResponse
+import com.frogobox.frogonewsapi.data.response.SourceResponse
 
 /**
  * Created by Faisal Amir
@@ -32,7 +33,33 @@ interface ConsumeNewsApiView {
         sources: String?,
         category: String?,
         country: String?,
+        pageSize: Int?,
+        page: Int?,
         callback: NewsResultCallback<ArticleResponse>
+    )
+
+    // Get Everythings
+    fun getEverythings(
+        q: String?,
+        from: String?,
+        to: String?,
+        qInTitle: String?,
+        sources: String?,
+        domains: String?,
+        excludeDomains: String?,
+        language: String?,
+        sortBy: String?,
+        pageSize: Int?,
+        page: Int?,
+        callback: NewsResultCallback<ArticleResponse>
+    )
+
+    // Get Sources
+    fun getSources(
+        language: String,
+        country: String,
+        category: String,
+        callback: NewsResultCallback<SourceResponse>
     )
 
 }

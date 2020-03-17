@@ -2,6 +2,7 @@ package com.frogobox.frogonewsapi.data.source
 
 import android.content.Context
 import com.frogobox.frogonewsapi.data.response.ArticleResponse
+import com.frogobox.frogonewsapi.data.response.SourceResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
@@ -36,10 +37,12 @@ object NewsRemoteDataSource : NewsDataSource {
         sources: String?,
         category: String?,
         country: String?,
+        pageSize: Int?,
+        page: Int?,
         callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
     ) {
         newsApiService.getApiService
-            .getTopHeadline(apiKey, q, sources, category, country)
+            .getTopHeadline(apiKey, q, sources, category, country, pageSize, page)
             .subscribeOn(Schedulers.io())
             .doOnSubscribe { callback.onShowProgress() }
             .doOnTerminate { callback.onHideProgress() }
@@ -55,6 +58,81 @@ object NewsRemoteDataSource : NewsDataSource {
 
                 override fun onFinish() {}
 
+            })
+    }
+
+    override fun getEverythings(
+        apiKey: String,
+        q: String?,
+        from: String?,
+        to: String?,
+        qInTitle: String?,
+        sources: String?,
+        domains: String?,
+        excludeDomains: String?,
+        language: String?,
+        sortBy: String?,
+        pageSize: Int?,
+        page: Int?,
+        callback: NewsDataSource.GetRemoteCallback<ArticleResponse>
+    ) {
+        newsApiService.getApiService.getEverythings(
+                apiKey,
+                q,
+                from,
+                to,
+                qInTitle,
+                sources,
+                domains,
+                excludeDomains,
+                language,
+                sortBy,
+                pageSize,
+                page
+            )
+            .subscribeOn(Schedulers.io())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<ArticleResponse>() {
+                override fun onSuccess(model: ArticleResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+
+                }
+            })
+    }
+
+    override fun getSources(
+        apiKey: String,
+        language: String,
+        country: String,
+        category: String,
+        callback: NewsDataSource.GetRemoteCallback<SourceResponse>
+    ) {
+        newsApiService.getApiService.getSources(apiKey, language, country, category)
+            .subscribeOn(Schedulers.io())
+            .doOnSubscribe { callback.onShowProgress() }
+            .doOnTerminate { callback.onHideProgress() }
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(object : NewsApiCallback<SourceResponse>() {
+                override fun onSuccess(model: SourceResponse) {
+                    callback.onSuccess(model)
+                }
+
+                override fun onFailure(code: Int, errorMessage: String) {
+                    callback.onFailed(code, errorMessage)
+                }
+
+                override fun onFinish() {
+
+                }
             })
     }
 }

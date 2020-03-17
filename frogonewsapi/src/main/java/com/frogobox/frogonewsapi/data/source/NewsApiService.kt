@@ -2,6 +2,7 @@ package com.frogobox.frogonewsapi.data.source
 
 import android.content.Context
 import com.frogobox.frogonewsapi.data.response.ArticleResponse
+import com.frogobox.frogonewsapi.data.response.SourceResponse
 import com.frogobox.frogonewsapi.util.NewsConstant
 import com.frogobox.frogonewsapi.util.NewsUrl
 import com.readystatesoftware.chuck.ChuckInterceptor
@@ -34,58 +35,6 @@ import java.util.concurrent.TimeUnit
  */
 interface NewsApiService {
 
-    // Get Top Headline From Country
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineByCountry(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_COUNTRY) country: String
-    ): Observable<ArticleResponse>
-
-    // Get Top Headline From Country and Category
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineByCountry(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_COUNTRY) country: String,
-        @Query(NewsConstant.QUERY_CATEGORY) category: String
-    ): Observable<ArticleResponse>
-
-    // Get Top Headline From Source
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineBySource(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_SOURCES) sources: String
-    ): Observable<ArticleResponse>
-
-    // Get Top Headline From Source and Category
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineBySource(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_SOURCES) sources: String,
-        @Query(NewsConstant.QUERY_CATEGORY) category: String
-    ): Observable<ArticleResponse>
-
-    // Get Top Headline From q
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineByQ(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_Q) q: String
-    ): Observable<ArticleResponse>
-
-    // Get Top Headline From q
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineByQ(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_Q) q: String,
-        @Query(NewsConstant.QUERY_CATEGORY) category: String
-    ): Observable<ArticleResponse>
-
-    // Get Top Headline From Category
-    @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
-    fun getTopHeadlineByCategory(
-        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
-        @Query(NewsConstant.QUERY_CATEGORY) category: String
-    ): Observable<ArticleResponse>
-
     // Get Top Headline
     @GET(NewsUrl.NEWS_URL_TOP_HEADLINE)
     fun getTopHeadline(
@@ -93,9 +42,36 @@ interface NewsApiService {
         @Query(NewsConstant.QUERY_Q) q: String?,
         @Query(NewsConstant.QUERY_SOURCES) sources: String?,
         @Query(NewsConstant.QUERY_CATEGORY) category: String?,
-        @Query(NewsConstant.QUERY_COUNTRY) country: String?
+        @Query(NewsConstant.QUERY_COUNTRY) country: String?,
+        @Query(NewsConstant.QUERY_PAGE_SIZE) pageSize: Int?,
+        @Query(NewsConstant.QUERY_PAGE) page: Int?
     ): Observable<ArticleResponse>
 
+    // Get Everythings
+    @GET(NewsUrl.NEWS_URL_EVERYTHING)
+    fun getEverythings(
+        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
+        @Query(NewsConstant.QUERY_Q) q: String?,
+        @Query(NewsConstant.QUERY_FROM) from: String?,
+        @Query(NewsConstant.QUERY_TO) to: String?,
+        @Query(NewsConstant.QUERY_Q_IN_TITLE) qInTitle: String?,
+        @Query(NewsConstant.QUERY_SOURCES) sources: String?,
+        @Query(NewsConstant.QUERY_DOMAINS) domains: String?,
+        @Query(NewsConstant.QUERY_EXCLUDE_DOMAINS) excludeDomains: String?,
+        @Query(NewsConstant.QUERY_LANGUAGE) language: String?,
+        @Query(NewsConstant.QUERY_SORT_BY) sortBy: String?,
+        @Query(NewsConstant.QUERY_PAGE_SIZE) pageSize: Int?,
+        @Query(NewsConstant.QUERY_PAGE) page: Int?
+    ): Observable<ArticleResponse>
+
+    // Get Sources
+    @GET(NewsUrl.NEWS_URL_SOURCES)
+    fun getSources(
+        @Query(NewsConstant.QUERY_API_KEY) apiKey: String,
+        @Query(NewsConstant.QUERY_LANGUAGE) language: String,
+        @Query(NewsConstant.QUERY_COUNTRY) country: String,
+        @Query(NewsConstant.QUERY_CATEGORY) category: String
+    ): Observable<SourceResponse>
 
     companion object Factory {
 

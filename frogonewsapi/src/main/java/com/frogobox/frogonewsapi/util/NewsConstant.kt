@@ -25,8 +25,17 @@ class NewsConstant {
         const val QUERY_SOURCES = "sources"
         const val QUERY_CATEGORY = "category"
         const val QUERY_Q = "q"
+        const val QUERY_Q_IN_TITLE = "qInTitle"
         const val QUERY_LANGUAGE = "language"
         const val QUERY_COUNTRY = "country"
+        const val QUERY_PAGE_SIZE = "pageSize"
+        const val QUERY_PAGE = "page"
+        const val QUERY_DOMAINS = "domains"
+        const val QUERY_EXCLUDE_DOMAINS = "excludeDomains"
+        const val QUERY_FROM = "from"
+        const val QUERY_TO = "to"
+        const val QUERY_SORT_BY = "sortBy"
+
 
     }
 
