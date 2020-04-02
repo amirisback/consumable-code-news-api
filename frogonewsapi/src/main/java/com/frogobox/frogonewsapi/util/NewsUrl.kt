@@ -17,22 +17,18 @@ package com.frogobox.frogonewsapi.util
  * com.frogobox.frogonewsapi.util
  *
  */
-class NewsUrl {
+object NewsUrl {
 
-    companion object {
+    const val NEWS_BASE_URL = "http://newsapi.org/"
+    const val NEWS_API_KEY = "84d090d0537548ee8ac77620217b1b52"
 
-        const val NEWS_BASE_URL = "http://newsapi.org/"
-        const val NEWS_API_KEY = "84d090d0537548ee8ac77620217b1b52"
+    const val NEWS_BASE_PATH = "v2/"
 
-        const val NEWS_BASE_PATH = "v2/"
+    const val NEWS_PATH_TOP_HEADLINE = "top-headlines"
+    const val NEWS_PATH_EVERYTHING = "everything"
+    const val NEWS_PATH_SOURCES = "sources"
 
-        const val NEWS_PATH_TOP_HEADLINE = "top-headlines"
-        const val NEWS_PATH_EVERYTHING = "everything"
-        const val NEWS_PATH_SOURCES = "sources"
-
-        const val NEWS_URL_TOP_HEADLINE = "$NEWS_BASE_PATH$NEWS_PATH_TOP_HEADLINE"
-        const val NEWS_URL_EVERYTHING = "$NEWS_BASE_PATH$NEWS_PATH_EVERYTHING"
-        const val NEWS_URL_SOURCES = "$NEWS_BASE_PATH$NEWS_PATH_SOURCES"
-
-    }
+    const val NEWS_URL_TOP_HEADLINE = "$NEWS_BASE_PATH$NEWS_PATH_TOP_HEADLINE"
+    const val NEWS_URL_EVERYTHING = "$NEWS_BASE_PATH$NEWS_PATH_EVERYTHING"
+    const val NEWS_URL_SOURCES = "$NEWS_BASE_PATH$NEWS_PATH_SOURCES"
 }

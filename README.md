@@ -1,5 +1,5 @@
 # consumable-code-news-api By AmirIsBack
-- v1.0.1 - Development
+- v1.0.2 - Development
 - Stable version
 
 # About This Project
@@ -56,6 +56,20 @@ https://newsapi.org/
         callback: NewsResultCallback<SourceResponse>
     )
 
+# Contant Value Category
+
+    object NewsConstant {
+    
+        const val CATEGORY_BUSINESS = "business"
+        const val CATEGORY_ENTERTAIMENT = "entertainment"
+        const val CATEGORY_GENERAL = "general"
+        const val CATEGORY_HEALTH = "health"
+        const val CATEGORY_SCIENCE = "science"
+        const val CATEGORY_SPORTS = "sports"
+        const val CATEGORY_TECHNOLOGY = "technology"
+    
+    }
+
 # Android Library Version (build.gradle)
 - ext.kotlin_version = '1.3.71'
 - classpath 'com.android.tools.build:gradle:3.6.1'
@@ -66,7 +80,7 @@ https://newsapi.org/
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.1
+    $version_release = 1.0.2
 
 What's New??
 
