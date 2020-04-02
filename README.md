@@ -1,5 +1,5 @@
 # consumable-code-news-api By AmirIsBack
-- v1.0.2 - Development
+- v1.0.3 - Development
 - Stable version
 
 # About This Project
@@ -80,7 +80,7 @@ https://newsapi.org/
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.2
+    $version_release = 1.0.3
 
 What's New??
 
@@ -113,8 +113,8 @@ Add it in your root build.gradle at the end of repositories:
     consumeNewsApi.getTopHeadline( // Adding Base Parameter on main function
         null, 
         null,
-        null,
-        "id",
+        CATEGORY_HEALTH,
+        COUNTRY_ID,
         null,
         null,
         object : NewsResultCallback<ArticleResponse> {

@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.frogobox.frogonewsapi.ConsumeNewsApi
 import com.frogobox.frogonewsapi.callback.NewsResultCallback
 import com.frogobox.frogonewsapi.data.response.ArticleResponse
+import com.frogobox.frogonewsapi.util.NewsConstant.CATEGORY_HEALTH
+import com.frogobox.frogonewsapi.util.NewsConstant.COUNTRY_ID
 import com.frogobox.frogonewsapi.util.NewsUrl
 
 class MainActivity : AppCompatActivity() {
@@ -18,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         consumeNewsApi.getTopHeadline(
             null,
             null,
-            null,
-            "id",
+            CATEGORY_HEALTH,
+            COUNTRY_ID,
             null,
             null,
             object : NewsResultCallback<ArticleResponse> {
