@@ -13,6 +13,8 @@ https://newsapi.org/
 
 # Screenshoot Apps
 <span align="center"><img width="200px" height="360px" src="docs/image/ss_main.png"></span>
+<span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_1.png"></span>
+<span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_2.png"></span>
 
 # Version Release
 This Is Latest Release
