@@ -1,5 +1,5 @@
 # consumable-code-news-api By AmirIsBack
-- v1.0.3 - Development
+- v1.0.4 - Development
 - Stable version
 
 # About This Project
@@ -8,14 +8,85 @@ Eliminates the method of retrieving json data using retrofit repeatedly. so this
 # Special From This Project
 Simple code and reusable data
 
-# Fecthing Data Library
-- Retrofit
-- RxJava
-- OkHttp
-- Chuck Interceptor
-
 # Documentation The News API
 https://newsapi.org/
+
+# Screenshoot Apps
+<span align="center"><img width="200px" height="360px" src="docs/image/ss_main.png"></span>
+
+# Version Release
+This Is Latest Release
+
+    $version_release = 1.0.4
+
+What's New??
+
+    * update build.gradle, adding sample code *
+
+# How To Use This Project
+<h3>Step 1. Add the JitPack repository to your build file</h3>
+
+Add it in your root build.gradle at the end of repositories:
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+  
+  
+<h3>Step 2. Add the dependency</h3>
+
+	dependencies {
+	        // library consumable code news api
+            implementation 'com.github.amirisback:consumable-code-news-api:1.0.4'
+	}
+	
+<h3>Step 3. Declaration ConsumeNewsApi</h3>
+
+	val consumeNewsApi = ConsumeNewsApi(NewsUrl.NEWS_API_KEY) // Your API_KEY
+    consumeNewsApi.usingChuckInterceptor(this) // Using Chuck Interceptor
+    consumeNewsApi.getTopHeadline( // Adding Base Parameter on main function
+        null, 
+        null,
+        CATEGORY_HEALTH,
+        COUNTRY_ID,
+        null,
+        null,
+        object : NewsResultCallback<ArticleResponse> {
+            override fun getResultData(data: ArticleResponse) {
+                // Your Ui or data
+            }
+
+            override fun failedResult(statusCode: Int, errorMessage: String?) {
+                // Your failed to do
+            }
+
+            override fun onShowProgress() {
+                // Your Progress Show
+            }
+
+            override fun onHideProgress() {
+                // Your Progress Hide
+            }
+
+        })
+	
+
+# Contant Value Category
+
+    object NewsConstant {
+    
+        const val CATEGORY_BUSINESS = "business"
+        const val CATEGORY_ENTERTAIMENT = "entertainment"
+        const val CATEGORY_GENERAL = "general"
+        const val CATEGORY_HEALTH = "health"
+        const val CATEGORY_SCIENCE = "science"
+        const val CATEGORY_SPORTS = "sports"
+        const val CATEGORY_TECHNOLOGY = "technology"
+    
+    }
 
 # Function Main From This Project
     // Switch For Using Chuck Interceptor
@@ -56,86 +127,18 @@ https://newsapi.org/
         callback: NewsResultCallback<SourceResponse>
     )
 
-# Contant Value Category
-
-    object NewsConstant {
-    
-        const val CATEGORY_BUSINESS = "business"
-        const val CATEGORY_ENTERTAIMENT = "entertainment"
-        const val CATEGORY_GENERAL = "general"
-        const val CATEGORY_HEALTH = "health"
-        const val CATEGORY_SCIENCE = "science"
-        const val CATEGORY_SPORTS = "sports"
-        const val CATEGORY_TECHNOLOGY = "technology"
-    
-    }
+# Fecthing Data Library
+- Retrofit
+- RxJava
+- OkHttp
+- Chuck Interceptor
 
 # Android Library Version (build.gradle)
-- ext.kotlin_version = '1.3.71'
-- classpath 'com.android.tools.build:gradle:3.6.1'
+- ext.kotlin_version = '1.3.72'
+- classpath 'com.android.tools.build:gradle:3.6.3'
 - compileSdkVersion 29
 - buildToolsVersion "29.0.3"
 - minSdkVersion 21
-
-# Version Release
-This Is Latest Release
-
-    $version_release = 1.0.3
-
-What's New??
-
-    * Remove Unused Dependencies *
-
-# How To Use This Project
-<h3>Step 1. Add the JitPack repository to your build file</h3>
-
-Add it in your root build.gradle at the end of repositories:
-
-	allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
-  
-  
-<h3>Step 2. Add the dependency</h3>
-
-	dependencies {
-	        // library consumable code news api
-            implementation 'com.github.amirisback:consumable-code-news-api:$version_release'
-	}
-	
-<h3>Step 3. Declaration ConsumeNewsApi</h3>
-
-	val consumeNewsApi = ConsumeNewsApi(NewsUrl.NEWS_API_KEY) // Your API_KEY
-    consumeNewsApi.usingChuckInterceptor(this) // Using Chuck Interceptor
-    consumeNewsApi.getTopHeadline( // Adding Base Parameter on main function
-        null, 
-        null,
-        CATEGORY_HEALTH,
-        COUNTRY_ID,
-        null,
-        null,
-        object : NewsResultCallback<ArticleResponse> {
-            override fun getResultData(data: ArticleResponse) {
-                // Your Ui or data
-            }
-
-            override fun failedResult(statusCode: Int, errorMessage: String?) {
-                // Your failed to do
-            }
-
-            override fun onShowProgress() {
-                // Your Progress Show
-            }
-
-            override fun onHideProgress() {
-                // Your Progress Hide
-            }
-
-        })
-	
 
 # Colaborator
 Very open to anyone, I'll write your name under this, please contribute by sending an email to me
