@@ -1,5 +1,5 @@
 # consumable-code-news-api By AmirIsBack
-- v1.0.4 - Development
+- v1.0.5 - Development
 - Stable version
 
 # About This Project
