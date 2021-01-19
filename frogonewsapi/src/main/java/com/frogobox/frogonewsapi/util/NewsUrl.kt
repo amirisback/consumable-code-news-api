@@ -19,7 +19,7 @@ package com.frogobox.frogonewsapi.util
  */
 object NewsUrl {
 
-    const val NEWS_BASE_URL = "http://newsapi.org/"
+    const val NEWS_BASE_URL = "https://newsapi.org/"
     const val NEWS_API_KEY = "84d090d0537548ee8ac77620217b1b52"
 
     const val NEWS_BASE_PATH = "v2/"
