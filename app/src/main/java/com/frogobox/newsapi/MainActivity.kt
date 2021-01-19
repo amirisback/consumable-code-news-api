@@ -72,10 +72,10 @@ class MainActivity : AppCompatActivity() {
                 override fun onItemLongClicked(data: Article) {}
 
                 override fun setupInitComponent(view: View, data: Article) {
-                    val tvTitle = view.findViewById<TextView>(R.id.frogo_rv_type_6_tv_title)
-                    val tvSubtitle = view.findViewById<TextView>(R.id.frogo_rv_type_6_tv_subtitle)
-                    val tvDesc = view.findViewById<TextView>(R.id.frogo_rv_type_6_tv_description)
-                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_type_6_iv_poster)
+                    val tvTitle = view.findViewById<TextView>(R.id.frogo_rv_list_type_6_tv_title)
+                    val tvSubtitle = view.findViewById<TextView>(R.id.frogo_rv_list_type_6_tv_subtitle)
+                    val tvDesc = view.findViewById<TextView>(R.id.frogo_rv_list_type_6_tv_desc)
+                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_list_type_6_frogo_dummy_content_description)
 
                     tvTitle.text = data.title ?: "No Data"
                     tvSubtitle.text = data.author ?: "No Data"
