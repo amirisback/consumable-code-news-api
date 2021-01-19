@@ -19,11 +19,12 @@ https://newsapi.org/
 # Version Release
 This Is Latest Release
 
-    $version_release = 1.0.4
+    $version_release = 1.0.5
 
 What's New??
 
-    * update build.gradle, adding sample code *
+    * update build.gradle *
+    * fixing CLEARTEXT security policy issue *
 
 # How To Use This Project
 <h3>Step 1. Add the JitPack repository to your build file</h3>
@@ -42,7 +43,7 @@ Add it in your root build.gradle at the end of repositories:
 
 	dependencies {
 	        // library consumable code news api
-            implementation 'com.github.amirisback:consumable-code-news-api:1.0.4'
+            implementation 'com.github.amirisback:consumable-code-news-api:1.0.5'
 	}
 	
 <h3>Step 3. Declaration ConsumeNewsApi</h3>

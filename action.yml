@@ -1,9 +1,13 @@
 name: 'consumable-code-news-api'
 description: 'Retrofit has been Handled !! || Consumable code for request API (News API)'
 author: 'Muhammad Faisal Amir'
+branding:
+  icon: archive
+  color: green
 inputs:
   myInput:
     description: 'Input to use'
+    required: false
     default: 'world'
 runs:
   using: 'docker'
