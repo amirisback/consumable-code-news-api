@@ -13,7 +13,7 @@ import com.frogobox.frogonewsapi.data.response.ArticleResponse
 import com.frogobox.frogonewsapi.util.NewsConstant.CATEGORY_HEALTH
 import com.frogobox.frogonewsapi.util.NewsConstant.COUNTRY_ID
 import com.frogobox.frogonewsapi.util.NewsUrl
-import com.frogobox.recycler.boilerplate.viewrclass.FrogoViewAdapterCallback
+import com.frogobox.recycler.core.IFrogoViewAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -66,7 +66,7 @@ class MainActivity : AppCompatActivity() {
             .addData(data)
             .addCustomView(R.layout.frogo_rv_list_type_6)
             .addEmptyView(null)
-            .addCallback(object : FrogoViewAdapterCallback<Article> {
+            .addCallback(object : IFrogoViewAdapter<Article> {
                 override fun onItemClicked(data: Article) {}
 
                 override fun onItemLongClicked(data: Article) {}
@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                     val tvTitle = view.findViewById<TextView>(R.id.frogo_rv_list_type_6_tv_title)
                     val tvSubtitle = view.findViewById<TextView>(R.id.frogo_rv_list_type_6_tv_subtitle)
                     val tvDesc = view.findViewById<TextView>(R.id.frogo_rv_list_type_6_tv_desc)
-                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_list_type_6_frogo_dummy_content_description)
+                    val ivPoster = view.findViewById<ImageView>(R.id.frogo_rv_list_type_6_iv_poster)
 
                     tvTitle.text = data.title ?: "No Data"
                     tvSubtitle.text = data.author ?: "No Data"
