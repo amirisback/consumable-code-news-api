@@ -6,7 +6,7 @@ Eliminates the method of retrieving json data using retrofit repeatedly. so this
 https://newsapi.org/
 
 ## Screenshoot Apps
-| The Sport DB API |   Chuck Data 1              |   Chuck Data 2  |
+| News API |   Chuck Data 1              |   Chuck Data 2  |
 |:------------------:|:----------------------------:|:---------------------:|
 |<span align="center"><img width="200px" height="360px" src="docs/image/ss_main.png"></span> | <span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_1.png"></span> | <span align="center"><img width="200px" height="360px" src="docs/image/ss_chuck_2.png"></span> |
 
