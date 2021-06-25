@@ -1,6 +1,8 @@
 package com.frogobox.frogonewsapi.data.source
 
 import android.content.Context
+import com.frogobox.frogolog.FLog
+import com.frogobox.frogolog.FrogoLog
 import com.frogobox.frogonewsapi.data.response.ArticleResponse
 import com.frogobox.frogonewsapi.data.response.SourceResponse
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -29,6 +31,7 @@ object NewsRemoteDataSource : NewsDataSource {
 
     override fun usingChuckInterceptor(context: Context) {
         newsApiService.usingChuckInterceptor(context)
+        FLog.d("Using Chuck Interceptor")
     }
 
     override fun getTopHeadline(
